@@ -1,0 +1,96 @@
+{
+  "message": "Success",
+  "status": "OK",
+  "data": [
+    {
+      "id": 1,
+      "title": "Angular Basics",
+      "description": "Learn the basics of Angular framework.",
+      "imageUrl": "https://via.placeholder.com/300x180",
+      "createdDate": "2024-01-01",
+      "totalHours": "10h",
+      "totalVideos": 20
+    },
+    {
+      "id": 2,
+      "title": "Advanced TypeScript",
+      "description": "Deep dive into TypeScript features.",
+      "imageUrl": "https://via.placeholder.com/300x180",
+      "createdDate": "2024-02-15",
+      "totalHours": "8h",
+      "totalVideos": 15
+    },
+    {
+      "id": 3,
+      "title": "RxJS in Practice",
+      "description": "Learn reactive programming with RxJS.",
+      "imageUrl": "https://via.placeholder.com/300x180",
+      "createdDate": "2024-03-10",
+      "totalHours": "12h",
+      "totalVideos": 25
+    },
+    {
+      "id": 4,
+      "title": "Node.js Fundamentals",
+      "description": "Get started with backend development using Node.js.",
+      "imageUrl": "https://via.placeholder.com/300x180",
+      "createdDate": "2024-01-20",
+      "totalHours": "15h",
+      "totalVideos": 30
+    },
+    {
+      "id": 5,
+      "title": "React for Beginners",
+      "description": "Introduction to React and component-based UI.",
+      "imageUrl": "https://via.placeholder.com/300x180",
+      "createdDate": "2024-02-05",
+      "totalHours": "9h",
+      "totalVideos": 18
+    },
+    {
+      "id": 6,
+      "title": "CSS Grid and Flexbox",
+      "description": "Master layout techniques in CSS.",
+      "imageUrl": "https://via.placeholder.com/300x180",
+      "createdDate": "2024-03-01",
+      "totalHours": "6h",
+      "totalVideos": 12
+    },
+    {
+      "id": 7,
+      "title": "Python for Data Science",
+      "description": "Learn Python with a focus on data science applications.",
+      "imageUrl": "https://via.placeholder.com/300x180",
+      "createdDate": "2024-01-15",
+      "totalHours": "20h",
+      "totalVideos": 40
+    },
+    {
+      "id": 8,
+      "title": "Django Web Development",
+      "description": "Build web apps using Django framework.",
+      "imageUrl": "https://via.placeholder.com/300x180",
+      "createdDate": "2024-02-25",
+      "totalHours": "14h",
+      "totalVideos": 28
+    },
+    {
+      "id": 9,
+      "title": "JavaScript ES6+ Features",
+      "description": "Explore modern JavaScript syntax and features.",
+      "imageUrl": "https://via.placeholder.com/300x180",
+      "createdDate": "2024-03-05",
+      "totalHours": "11h",
+      "totalVideos": 22
+    },
+    {
+      "id": 10,
+      "title": "MongoDB Essentials",
+      "description": "Learn NoSQL database concepts with MongoDB.",
+      "imageUrl": "https://via.placeholder.com/300x180",
+      "createdDate": "2024-02-10",
+      "totalHours": "7h",
+      "totalVideos": 14
+    }
+  ]
+}

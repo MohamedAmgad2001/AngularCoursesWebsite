@@ -1,0 +1,122 @@
+<div
+  class="text-center bg-primary text-white"
+  style="height: calc(70vh - 200px); padding-top: 7em"
+>
+  <h1>Welcome to CourseWebsite</h1>
+  <p>Your one-stop solution for online courses.</p>
+</div>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-9">
+      <h2 class="text-center fs-2 mb-4">Our Courses</h2>
+      <div class="row justify-content-start">
+        @for (item of courseList; track $index) {
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <!-- <img
+              [src]="item.imageUrl"
+              class="card-img-top"
+              alt="Course Image"
+            /> -->
+            <div class="card-body">
+              <h5 class="card-title">{{ item.title }}</h5>
+              <p class="card-text">
+                {{ item.description }}
+              </p>
+              <button class="btn btn-secondary">View Video</button>
+              <button class="btn btn-warning">Enroll</button>
+            </div>
+          </div>
+        </div>
+        }
+        <!-- </div> -->
+
+        <!-- <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <img
+              src="https://via.placeholder.com/300x180"
+              class="card-img-top"
+              alt="Course Image"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Course Title</h5>
+              <p class="card-text">
+                Some quick example text to describe the course content.
+              </p>
+              <button href="#" class="btn btn-secondary">View Video</button>
+              <button href="#" class="btn btn-warning">Enroll</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <img
+              src="https://via.placeholder.com/300x180"
+              class="card-img-top"
+              alt="Course Image"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Course Title</h5>
+              <p class="card-text">
+                Some quick example text to describe the course content.
+              </p>
+              <button href="#" class="btn btn-secondary">View Video</button>
+              <button href="#" class="btn btn-warning">Enroll</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <img
+              src="https://via.placeholder.com/300x180"
+              class="card-img-top"
+              alt="Course Image"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Course Title</h5>
+              <p class="card-text">
+                Some quick example text to describe the course content.
+              </p>
+              <button href="#" class="btn btn-secondary">View Video</button>
+              <button href="#" class="btn btn-warning">Enroll</button>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="bg-warning p-3 rounded mb-4">
+        <h2 class="text-center fs-4 mb-4">Trending Courses</h2>
+        <div class="card mb-3" style="width: 100%">
+          <img src="#" class="card-img-top" alt="Trending Course" />
+          <div class="card-body">
+            <h5 class="card-title">Course Title</h5>
+            <p class="card-text">Short course description.</p>
+            <button href="#" class="btn btn-dark">Go somewhere</button>
+          </div>
+        </div>
+
+        <div class="card mb-3" style="width: 100%">
+          <img src="#" class="card-img-top" alt="Trending Course" />
+          <div class="card-body">
+            <h5 class="card-title">Course Title</h5>
+            <p class="card-text">Short course description.</p>
+            <button href="#" class="btn btn-dark">Go somewhere</button>
+          </div>
+        </div>
+
+        <div class="card mb-3" style="width: 100%">
+          <img src="#" class="card-img-top" alt="Trending Course" />
+          <div class="card-body">
+            <h5 class="card-title">Course Title</h5>
+            <p class="card-text">Short course description.</p>
+            <button href="#" class="btn btn-dark">Go somewhere</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
