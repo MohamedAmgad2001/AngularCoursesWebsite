@@ -17,7 +17,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadCourses();
-    console.log(this.courseList);
   }
   loadCourses(): void {
     this.masterService.getAllCourses().subscribe((response: ApiResponse) => {
@@ -38,7 +37,6 @@ export class HomeComponent implements OnInit {
         } else {
           this.selectedCourse = [];
         }
-        console.log(response);
       });
   }
   closeVideoModal(): void {
