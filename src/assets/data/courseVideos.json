@@ -1,0 +1,158 @@
+{
+  "data": [
+    {
+      "courseVideoId": 1,
+      "courseId": 1,
+      "videoTitle": "Getting Started with Angular",
+      "videoId": 101,
+      "videoDescription": "Introduction to Angular CLI and project setup."
+    },
+    {
+      "courseVideoId": 2,
+      "courseId": 1,
+      "videoTitle": "Angular Components",
+      "videoId": 102,
+      "videoDescription": "Understanding components in Angular."
+    },
+    {
+      "courseVideoId": 21,
+      "courseId": 1,
+      "videoTitle": "Angular Components and Structure",
+      "videoId": 103,
+      "videoDescription": "Understanding components in Angular and their structure."
+    },
+    {
+      "courseVideoId": 22,
+      "courseId": 1,
+      "videoTitle": "Angular for Beginners",
+      "videoId": 104,
+      "videoDescription": "Understanding components in Angular for beginners."
+    },
+    {
+      "courseVideoId": 3,
+      "courseId": 2,
+      "videoTitle": "Type Inference in TypeScript",
+      "videoId": 201,
+      "videoDescription": "Learn how TypeScript infers types automatically."
+    },
+    {
+      "courseVideoId": 4,
+      "courseId": 2,
+      "videoTitle": "Generics and Utility Types",
+      "videoId": 202,
+      "videoDescription": "Use TypeScript generics and utility types effectively."
+    },
+    {
+      "courseVideoId": 5,
+      "courseId": 3,
+      "videoTitle": "Intro to RxJS Observables",
+      "videoId": 301,
+      "videoDescription": "Learn how observables work in RxJS."
+    },
+    {
+      "courseVideoId": 6,
+      "courseId": 3,
+      "videoTitle": "RxJS Operators Deep Dive",
+      "videoId": 302,
+      "videoDescription": "Explore map, mergeMap, switchMap and more."
+    },
+    {
+      "courseVideoId": 7,
+      "courseId": 4,
+      "videoTitle": "Installing Node and NPM",
+      "videoId": 401,
+      "videoDescription": "Set up Node.js and NPM on your machine."
+    },
+    {
+      "courseVideoId": 8,
+      "courseId": 4,
+      "videoTitle": "Creating Your First API",
+      "videoId": 402,
+      "videoDescription": "Build a basic REST API with Express."
+    },
+    {
+      "courseVideoId": 9,
+      "courseId": 5,
+      "videoTitle": "React JSX Syntax",
+      "videoId": 501,
+      "videoDescription": "Understanding JSX in React components."
+    },
+    {
+      "courseVideoId": 10,
+      "courseId": 5,
+      "videoTitle": "State and Props in React",
+      "videoId": 502,
+      "videoDescription": "Learn how state and props work together."
+    },
+    {
+      "courseVideoId": 11,
+      "courseId": 6,
+      "videoTitle": "CSS Grid Basics",
+      "videoId": 601,
+      "videoDescription": "Introduction to CSS Grid layout system."
+    },
+    {
+      "courseVideoId": 12,
+      "courseId": 6,
+      "videoTitle": "Using Flexbox for Layouts",
+      "videoId": 602,
+      "videoDescription": "Master flex container and items."
+    },
+    {
+      "courseVideoId": 13,
+      "courseId": 7,
+      "videoTitle": "Python Data Types",
+      "videoId": 701,
+      "videoDescription": "Learn about different data types in Python."
+    },
+    {
+      "courseVideoId": 14,
+      "courseId": 7,
+      "videoTitle": "Using Pandas for Data Analysis",
+      "videoId": 702,
+      "videoDescription": "Load, clean, and analyze data with Pandas."
+    },
+    {
+      "courseVideoId": 15,
+      "courseId": 8,
+      "videoTitle": "Setting Up Django Project",
+      "videoId": 801,
+      "videoDescription": "Initial setup and folder structure."
+    },
+    {
+      "courseVideoId": 16,
+      "courseId": 8,
+      "videoTitle": "Creating Django Models",
+      "videoId": 802,
+      "videoDescription": "Define and use models in Django."
+    },
+    {
+      "courseVideoId": 17,
+      "courseId": 9,
+      "videoTitle": "ES6 Arrow Functions",
+      "videoId": 901,
+      "videoDescription": "Learn syntax and usage of arrow functions."
+    },
+    {
+      "courseVideoId": 18,
+      "courseId": 9,
+      "videoTitle": "Destructuring and Spread",
+      "videoId": 902,
+      "videoDescription": "Use modern destructuring and spread operators."
+    },
+    {
+      "courseVideoId": 19,
+      "courseId": 10,
+      "videoTitle": "Intro to MongoDB",
+      "videoId": 1001,
+      "videoDescription": "Learn MongoDB basics and NoSQL structure."
+    },
+    {
+      "courseVideoId": 20,
+      "courseId": 10,
+      "videoTitle": "CRUD Operations in MongoDB",
+      "videoId": 1002,
+      "videoDescription": "Perform Create, Read, Update, Delete in MongoDB."
+    }
+  ]
+}
