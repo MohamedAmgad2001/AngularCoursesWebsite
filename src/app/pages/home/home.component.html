@@ -14,76 +14,28 @@
         @for (item of courseList; track $index) {
         <div class="col-md-4 mb-4">
           <div class="card h-100">
-            <!-- <img
+            <img
               [src]="item.imageUrl"
               class="card-img-top"
               alt="Course Image"
-            /> -->
+            />
             <div class="card-body">
               <h5 class="card-title">{{ item.title }}</h5>
-              <p class="card-text">
-                {{ item.description }}
+              <p class="card-text" [title]="item.description">
+                {{ item.description | slice : 0 : 100 }}...
               </p>
-              <button class="btn btn-secondary">View Video</button>
-              <button class="btn btn-warning">Enroll</button>
+              <a
+                href="javascript:void(0)"
+                class="btn btn-secondary"
+                (click)="openVideoModal(item.id)"
+              >
+                View Video
+              </a>
+              <a href="" class="btn btn-warning">Enroll</a>
             </div>
           </div>
         </div>
         }
-        <!-- </div> -->
-
-        <!-- <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <img
-              src="https://via.placeholder.com/300x180"
-              class="card-img-top"
-              alt="Course Image"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Course Title</h5>
-              <p class="card-text">
-                Some quick example text to describe the course content.
-              </p>
-              <button href="#" class="btn btn-secondary">View Video</button>
-              <button href="#" class="btn btn-warning">Enroll</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <img
-              src="https://via.placeholder.com/300x180"
-              class="card-img-top"
-              alt="Course Image"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Course Title</h5>
-              <p class="card-text">
-                Some quick example text to describe the course content.
-              </p>
-              <button href="#" class="btn btn-secondary">View Video</button>
-              <button href="#" class="btn btn-warning">Enroll</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="card h-100">
-            <img
-              src="https://via.placeholder.com/300x180"
-              class="card-img-top"
-              alt="Course Image"
-            />
-            <div class="card-body">
-              <h5 class="card-title">Course Title</h5>
-              <p class="card-text">
-                Some quick example text to describe the course content.
-              </p>
-              <button href="#" class="btn btn-secondary">View Video</button>
-              <button href="#" class="btn btn-warning">Enroll</button>
-            </div>
-          </div>
-        </div> -->
       </div>
     </div>
 
@@ -115,6 +67,43 @@
             <p class="card-text">Short course description.</p>
             <button href="#" class="btn btn-dark">Go somewhere</button>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div
+  class="modal fade"
+  id="courseModal"
+  tabindex="-1"
+  aria-labelledby="courseModalLabel"
+>
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="courseModalLabel">Course Videos</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+          (click)="closeVideoModal()"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          @for (item of selectedCourse; track $index) {
+          <div class="col-md-3">
+            <img
+              src="../../assets/images/1.jpg"
+              class="img-fluid"
+              alt="Course Image"
+            />
+            <div class="card-body">
+              <h5>{{ item.videoTitle }}</h5>
+            </div>
+          </div>
+          }
         </div>
       </div>
     </div>
