@@ -8,12 +8,17 @@ export const routes: Routes = [
     path: '',
     component: HomeComponent,
   },
-  {
-    path: 'courses',
-    component: CourseDetailsComponent,
-  },
+
   {
     path: 'my-courses',
     component: MyCoursesComponent,
+  },
+  {
+    path: 'details',
+    component: CourseDetailsComponent,
+  },
+  {
+    path: '**',
+    component: HomeComponent,
   },
 ];
