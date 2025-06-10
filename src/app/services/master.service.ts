@@ -1,7 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
-import { ApiResponse, Course } from '../interface/master';
+import {
+  ApiResponse,
+  ApiResponseUser,
+  Course,
+  Users,
+} from '../interface/master';
 
 @Injectable({
   providedIn: 'root',
@@ -19,6 +24,13 @@ export class MasterService {
         );
         return { data: videos };
       })
+    );
+  }
+
+  addNewUser(newUser: Partial<Users>): Observable<ApiResponseUser> {
+    return this.http.post<ApiResponseUser>(
+      '/api/OnlineLearning/AddNewUser',
+      newUser
     );
   }
 }

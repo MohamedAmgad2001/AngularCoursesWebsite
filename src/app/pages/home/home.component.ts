@@ -18,11 +18,13 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.loadCourses();
   }
+
   loadCourses(): void {
     this.masterService.getAllCourses().subscribe((response: ApiResponse) => {
       this.courseList = response.data;
     });
   }
+
   openVideoModal(course: number): void {
     const modal = document.getElementById('courseModal');
     if (modal) {
@@ -39,6 +41,7 @@ export class HomeComponent implements OnInit {
         }
       });
   }
+
   closeVideoModal(): void {
     const modal = document.getElementById('courseModal');
     if (modal) {
@@ -47,4 +50,5 @@ export class HomeComponent implements OnInit {
     }
     this.selectedCourse = [];
   }
+
 }
