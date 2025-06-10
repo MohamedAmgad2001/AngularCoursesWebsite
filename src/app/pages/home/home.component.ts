@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MasterService } from '../../services/master.service';
-import { ApiResponse, Course } from '../../interface/master';
+import { ApiResponse, Course, CourseVideo } from '../../interface/master';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
 })
 export class HomeComponent implements OnInit {
   courseList: Course[] = [];
-  selectedCourse: any[] = [];
+  selectedCourse: CourseVideo[] = [];
   constructor(private masterService: MasterService) {}
 
   ngOnInit(): void {
@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
       modal.classList.add('show');
     }
     this.masterService
-      .getCourseVideoById(course)
+      .getCourseVideosById(course)
       .subscribe((response: ApiResponse) => {
         if (response.data.length > 0) {
           this.selectedCourse = response.data;

@@ -94,11 +94,7 @@
         <div class="row">
           @for (item of selectedCourse; track $index) {
           <div class="col-md-3">
-            <img
-              src="../../assets/images/1.jpg"
-              class="img-fluid"
-              alt="Course Image"
-            />
+            <img [src]="item.imageUrl" class="img-fluid" alt="Course Image" />
             <div class="card-body">
               <h5>{{ item.videoTitle }}</h5>
             </div>

@@ -11,7 +11,7 @@ export class MasterService {
   getAllCourses(): Observable<ApiResponse> {
     return this.http.get<ApiResponse>(`assets/data/courses.json`);
   }
-  getCourseVideoById(courseId: number): Observable<ApiResponse> {
+  getCourseVideosById(courseId: number): Observable<ApiResponse> {
     return this.http.get<ApiResponse>(`assets/data/courseVideos.json`).pipe(
       map((response: ApiResponse) => {
         const videos = response.data.filter(
