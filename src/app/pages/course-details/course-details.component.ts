@@ -23,6 +23,7 @@ export class CourseDetailsComponent implements OnInit{
     selectedIndex:number = 0;
 
     notWatched:boolean = false;
+    progress:number = 0;
 
     constructor(private masterServices:MasterService , private sanitize:DomSanitizer){}
   ngOnInit(): void {
@@ -30,6 +31,7 @@ export class CourseDetailsComponent implements OnInit{
   this.course = Number(this.activatedRoute.snapshot.params['id']);
   console.log(this.course);
   this.getCourseByID()
+  this.updateProgress();
   }
 getCourseByID(){
   this.masterServices.getCourseVideosById(this.course).subscribe((response: ApiResponse) => {
@@ -48,7 +50,12 @@ sanitizeUrl(url:string):SafeResourceUrl{
 watchVideo(url:CourseVideo){
   this.safeUrl = this.sanitizeUrl(url.videoUrl);
 
-  url.watched=true
+  url.watched=true;
+
+    if (!url.watched) {
+    url.watched = true;
+    this.updateProgress();
+  }
 }
 
 getName(index:number){
@@ -57,5 +64,11 @@ this.selectedIndex = index
 this.notWatched = true;
 
 }
+
+updateProgress() {
+  const total = this.selectedCourse.length;
+  const watched = this.selectedCourse.filter(v => v.watched).length;
+  this.progress = Math.round((watched / total) * 100);
+} 
 
 }
