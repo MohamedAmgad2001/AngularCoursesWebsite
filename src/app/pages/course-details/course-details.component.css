@@ -1,0 +1,17 @@
+
+hr{
+    color: white;
+}
+.tutorial{
+    height: 100vh;
+}
+.tutorial a{
+    cursor: pointer;
+    text-decoration: none;
+}
+.video-content .vid{
+    height: 400px;
+}
+.video-content .vid iframe{
+    border-radius: 10px;
+}

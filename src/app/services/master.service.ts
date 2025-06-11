@@ -27,6 +27,18 @@ export class MasterService {
     );
   }
 
+
+    getVideosById(courseId: number): Observable<ApiResponse> {
+    return this.http.get<ApiResponse>(`assets/data/courseVideos.json`).pipe(
+      map((response: ApiResponse) => {
+        const videos = response.data.filter(
+          (item: { courseId: number }) => item.courseId === courseId
+        );
+        return { data: videos };
+      })
+    );
+  }
+
   addNewUser(newUser: Partial<Users>): Observable<ApiResponseUser> {
     return this.http.post<ApiResponseUser>(
       '/api/OnlineLearning/AddNewUser',

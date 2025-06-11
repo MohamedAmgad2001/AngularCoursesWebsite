@@ -16,7 +16,7 @@
               <p class="card-text" [title]="item.courseDescription">
                 {{ item.courseDescription | slice : 0 : 100 }}...
               </p>
-              <a href="javascript:void(0)" class="btn btn-secondary">
+              <a (click)="navigatingToCourse(item.courseId)" routerLinkActive="routerLinkActive" href="javascript:void(0)" class="btn btn-secondary">
                 Start Learning
               </a>
             </div>

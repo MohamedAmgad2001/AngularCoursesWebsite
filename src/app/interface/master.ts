@@ -25,6 +25,7 @@ export interface CourseVideo {
   videoDescription: string;
   videoUrl: string;
   imageUrl: string;
+  watched: boolean
 }
 
 export class Users {
