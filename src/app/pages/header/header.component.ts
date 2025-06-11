@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {
   ApiResponse,
@@ -7,15 +7,16 @@ import {
   Users,
 } from '../../interface/master';
 import { MasterService } from '../../services/master.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   isLoginFormVisiable: boolean = true;
 
   userRegisterObj: Users = new Users();
@@ -23,6 +24,11 @@ export class HeaderComponent {
     emailId: '',
     password: '',
   };
+  loginUser: User | null = null;
+  ngOnInit(): void {
+    const storedUser = localStorage.getItem('currentUser');
+    this.loginUser = storedUser ? JSON.parse(storedUser) : null;
+  }
 
   masterServ = inject(MasterService);
   toggleForm(val: boolean) {
@@ -44,7 +50,6 @@ export class HeaderComponent {
     localStorage.setItem('users', JSON.stringify(users));
 
     alert('User registered successfully!');
-    this.closeModal();
   }
 
   onLogin() {
@@ -57,11 +62,17 @@ export class HeaderComponent {
     );
     if (user) {
       alert('Login successful!');
+      localStorage.setItem('currentUser', JSON.stringify(user));
+      this.loginUser = user;
     } else {
       alert('Invalid email or password');
     }
   }
 
+  onLogout() {
+    localStorage.removeItem('currentUser');
+    this.loginUser = null;
+  }
   // onRegister() {
   //   this.masterServ
   //     .addNewUser(this.userRegisterObj)
@@ -74,11 +85,4 @@ export class HeaderComponent {
   //       }
   //     });
   // }
-
-  closeModal() {
-    const modal = document.getElementById('exampleModal');
-    if (modal) {
-      modal.style.display = 'none';
-    }
-  }
 }

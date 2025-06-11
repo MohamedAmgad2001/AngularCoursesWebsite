@@ -32,24 +32,48 @@ export class Users {
   userName: string;
   emailId: string;
   fullName: string;
-  // role: string
   createdDate: Date;
   password: string;
-  // projectName: string
-  // refreshToken: string
-  // refreshTokenExpiryTime: string
 
   constructor() {
     this.createdDate = new Date();
     this.emailId = '';
     this.fullName = '';
     this.password = '';
-    // this.projectName = "";
-    // this.refreshToken = "";
-    // this.refreshTokenExpiryTime = "";
-    // this.role = "";
     this.userId = 0;
     this.userName = '';
+  }
+}
+export interface IEnrollment {
+  enrollmentId: number;
+  userId: number;
+  courseId: number;
+  enrollmentDate: Date;
+  isCompleted: boolean;
+  courseName: string;
+  imageUrl: string;
+  courseDescription: string;
+}
+
+export class Enrollment {
+  enrollmentId: number;
+  userId: number;
+  courseId: number;
+  enrollmentDate: Date;
+  isCompleted: boolean;
+  courseName: string;
+  imageUrl: string;
+  courseDescription: string;
+
+  constructor() {
+    this.enrollmentDate = new Date();
+    this.isCompleted = false;
+    this.userId = 0;
+    this.courseId = 0;
+    this.enrollmentId = 0;
+    this.courseName = '';
+    this.imageUrl = '';
+    this.courseDescription = '';
   }
 }
 export interface User {

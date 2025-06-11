@@ -1,1 +1,29 @@
-<p>my-courses works!</p>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-9">
+      <h2 class="text-center fs-2 mb-4">My Courses</h2>
+      <div class="row justify-content-start">
+        @for (item of coursesList; track $index) {
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <img
+              [src]="item.imageUrl"
+              class="card-img-top"
+              alt="Course Image"
+            />
+            <div class="card-body">
+              <h5 class="card-title">{{ item.courseName }}</h5>
+              <p class="card-text" [title]="item.courseDescription">
+                {{ item.courseDescription | slice : 0 : 100 }}...
+              </p>
+              <a href="javascript:void(0)" class="btn btn-secondary">
+                Start Learning
+              </a>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>
