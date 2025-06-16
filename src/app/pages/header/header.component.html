@@ -229,9 +229,9 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav align-items-center gap-3">
         @if (loginUser) {
-        <li class="nav-item text-white small">Welcome back, <strong>{{ loginUser.emailId }}</strong></li>
+        <li class="nav-item text-white small">Welcome back, <strong>{{ loginUser.userName }}</strong></li>
         <li class="nav-item active">
-          <a class="nav-link" [routerLink]="['/my-courses']">My Courses</a>
+          <a class="nav-link text-light" [routerLink]="['/my-courses']">My Courses</a>
         </li>
         <li class="nav-item">
           <a class="btn btn-info text-dark btn-sm" (click)="onLogout()">Logout</a>

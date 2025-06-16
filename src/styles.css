@@ -3,7 +3,7 @@
     background-color: #313e4a;
 }
 .navbar .nav-link,.nav-brand{
-    color: darkslategrey !important;
+    color: darkslategrey;
 }
 .navbar .btn{
     color: #1a73e8 !important;

@@ -26,6 +26,7 @@ export class HeaderComponent implements OnInit {
   userLoginObj: User = {
     emailId: '',
     password: '',
+    userName: ''
   };
   loginUser: User | null = null;
   ngOnInit(): void {

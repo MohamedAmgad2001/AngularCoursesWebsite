@@ -80,4 +80,6 @@ export class Enrollment {
 export interface User {
   emailId: string;
   password: string;
+  userName: string;
+
 }
