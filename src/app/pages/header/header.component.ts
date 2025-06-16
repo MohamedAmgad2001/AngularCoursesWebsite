@@ -8,6 +8,7 @@ import {
 } from '../../interface/master';
 import { MasterService } from '../../services/master.service';
 import { RouterLink } from '@angular/router';
+declare var bootstrap: any;
 
 @Component({
   selector: 'app-header',
@@ -17,6 +18,8 @@ import { RouterLink } from '@angular/router';
   styleUrl: './header.component.css',
 })
 export class HeaderComponent implements OnInit {
+
+
   isLoginFormVisiable: boolean = true;
 
   userRegisterObj: Users = new Users();
@@ -36,6 +39,38 @@ export class HeaderComponent implements OnInit {
   }
 
   onRegister() {
+      if(!this.userRegisterObj.fullName){
+        let regName = document.getElementById("regName")
+        regName?.classList.remove("d-none")
+      setTimeout(() => {
+        regName?.classList.add("d-none")
+      }, 4000);
+      return;
+  }
+    if(!this.userRegisterObj.emailId){
+        let regMail = document.getElementById("regMail")
+        regMail?.classList.remove("d-none")
+      setTimeout(() => {
+        regMail?.classList.add("d-none")
+      }, 4000);
+      return;
+  }
+    if(!this.userRegisterObj.userName){
+        let regUser = document.getElementById("regUser")
+        regUser?.classList.remove("d-none")
+      setTimeout(() => {
+        regUser?.classList.add("d-none")
+      }, 4000);
+      return;
+  }
+    if(!this.userRegisterObj.password){
+        let regPass = document.getElementById("regPass")
+        regPass?.classList.remove("d-none")
+      setTimeout(() => {
+        regPass?.classList.add("d-none")
+      }, 4000);
+      return;
+  }
     const users = JSON.parse(localStorage.getItem('users') || '[]');
 
     users.push({
@@ -49,10 +84,31 @@ export class HeaderComponent implements OnInit {
 
     localStorage.setItem('users', JSON.stringify(users));
 
-    alert('User registered successfully!');
+    let toast = document.getElementById("toast");
+      if(toast){
+        toast.innerText = "User registered successfully!"
+      }
+      this.onLoginSuccess();
+    // alert('User registered successfully!');
   }
 
   onLogin() {
+  if(!this.userLoginObj.emailId){
+        let emailErr = document.getElementById("emailErr")
+        emailErr?.classList.remove("d-none")
+      setTimeout(() => {
+        emailErr?.classList.add("d-none")
+      }, 4000);
+      return;
+  }
+  if(!this.userLoginObj.password){
+      let passErr = document.getElementById("passErr")
+      passErr?.classList.remove("d-none")
+      setTimeout(() => {
+        passErr?.classList.add("d-none")
+      }, 1000);
+      return;
+  }
     const users = JSON.parse(localStorage.getItem('users') || '[]');
 
     const user = users.find(
@@ -61,13 +117,30 @@ export class HeaderComponent implements OnInit {
         u.password === this.userLoginObj.password
     );
     if (user) {
-      alert('Login successful!');
+      this.onLoginSuccess();
       localStorage.setItem('currentUser', JSON.stringify(user));
       this.loginUser = user;
+      console.log(user);
+      
     } else {
-      alert('Invalid email or password');
+      let toast = document.getElementById("toast");
+      if(toast){
+        toast.innerText = "Invalid email or password"
+      }
+      this.onLoginSuccess();
+    }
+    
+  }
+
+    onLoginSuccess() {
+    // Show toast after successful login
+    const toastEl = document.getElementById('loginToast');
+    if (toastEl) {
+      const toast = new bootstrap.Toast(toastEl);
+      toast.show();
     }
   }
+
 
   onLogout() {
     localStorage.removeItem('currentUser');

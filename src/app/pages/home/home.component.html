@@ -174,22 +174,31 @@
 </div>
 
 <!-- Video Modal -->
-<div class="modal fade" id="courseModal" tabindex="-1" aria-labelledby="courseModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl">
+<div
+  class="modal fade"
+  id="courseModal"
+  tabindex="-1"
+  aria-labelledby="courseModalLabel"
+>
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Course Videos</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="closeVideoModal()"></button>
+        <h5 class="modal-title" id="courseModalLabel">Course Videos</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+          (click)="closeVideoModal()"
+        ></button>
       </div>
       <div class="modal-body">
-        <div class="row g-4">
+        <div class="row">
           @for (item of selectedCourse; track $index) {
-          <div class="card h-100 shadow-sm border-0" style="background-color: white; color: #111827;">
-            <div class="card border-0 shadow-sm">
-              <img [src]="item.imageUrl" class="card-img-top" alt="Course Image" />
-              <div class="card-body">
-                <h6 class="card-title">{{ item.videoTitle }}</h6>
-              </div>
+          <div class="col-md-3">
+            <img [src]="item.imageUrl" class="img-fluid" alt="Course Image" />
+            <div class="card-body">
+              <h5>{{ item.videoTitle }}</h5>
             </div>
           </div>
           }

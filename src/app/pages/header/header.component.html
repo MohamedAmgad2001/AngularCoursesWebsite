@@ -262,6 +262,14 @@
 
       <div class="modal-body">
         <!-- Toggle Tabs -->
+<div id="loginToast" class="toast align-items-center justify-content-center text-bg-primary border-0 mt-3 mb-3" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="3000">
+  <div class="d-flex justify-content-center">
+    <div id="toast" class="toast-body text-center w-100">
+      Login Successfully
+    </div>
+  </div>
+</div>
+
         <div class="d-flex justify-content-center mb-4">
           <button
             id="Register"
@@ -287,10 +295,13 @@
           <div class="mb-3">
             <label for="mail" class="form-label">Email</label>
             <input type="email" class="form-control" id="mail" [(ngModel)]="userLoginObj.emailId" />
+            <span id="emailErr" class="text-danger d-none" >Please Fill This Field</span>
           </div>
           <div class="mb-3">
             <label for="pass" class="form-label">Password</label>
             <input type="password" class="form-control" id="pass" [(ngModel)]="userLoginObj.password" />
+            <span id="passErr" class="text-danger d-none">Please Enter Password</span>
+
           </div>
           <div class="d-flex justify-content-end">
             <button class="btn btn-secondary me-2" data-bs-dismiss="modal">Close</button>
@@ -304,18 +315,25 @@
           <div class="mb-3">
             <label for="fullName" class="form-label">Full Name</label>
             <input type="text" class="form-control" id="fullName" [(ngModel)]="userRegisterObj.fullName" name="fullName" />
+                        <span id="regName" class="text-danger d-none">Please Enter Your Name</span>
+
           </div>
           <div class="mb-3">
             <label for="mail" class="form-label">Email</label>
-            <input type="email" class="form-control" id="mail" [(ngModel)]="userRegisterObj.emailId" name="email" />
-          </div>
+            <input type="email" class="form-control" id="mail" [(ngModel)]="userRegisterObj.emailId" name="email" />          </div>
+                        <span id="regMail" class="text-danger d-none">Please Enter Email Address</span>
+
           <div class="mb-3">
             <label for="userName" class="form-label">User Name</label>
             <input type="text" class="form-control" id="userName" [(ngModel)]="userRegisterObj.userName" name="userName" />
+                        <span id="regUser" class="text-danger d-none">Please Enter User Name</span>
+
           </div>
           <div class="mb-3">
             <label for="pass" class="form-label">Password</label>
             <input type="password" class="form-control" id="pass" [(ngModel)]="userRegisterObj.password" name="password" />
+                        <span id="regPass" class="text-danger d-none">Please Enter Password</span>
+
           </div>
           <div class="d-flex justify-content-end">
             <button class="btn btn-secondary me-2" data-bs-dismiss="modal">Close</button>
