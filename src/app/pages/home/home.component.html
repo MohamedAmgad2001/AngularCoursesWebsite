@@ -1,4 +1,4 @@
-<div
+<!-- <div
   class="text-center bg-primary text-white"
   style="height: calc(70vh - 200px); padding-top: 7em"
 >
@@ -99,6 +99,97 @@
             <img [src]="item.imageUrl" class="img-fluid" alt="Course Image" />
             <div class="card-body">
               <h5>{{ item.videoTitle }}</h5>
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+
+
+
+<!-- Hero Section -->
+<div class="text-white text-center align-content-center" style="background-color: #4F46E5; height: 70vh;">
+  <h1 class="display-4 fw-bold">Welcome to CourseWebsite</h1>
+  <p class="lead">Your one-stop solution for online courses</p>
+
+      <button class="btn text-white " style="background-color: #212136; width: 20rem; height: 3rem;" [routerLink]="['/ai']">
+          Recommend Courses
+      </button>
+</div>
+
+<!-- Main Content -->
+<div class="container mt-5">
+  <div class="row">
+    <!-- Course List -->
+    <div class="col-lg-9">
+      <h2 class="text-center fw-bold mb-4">Our Courses</h2>
+      <div class="row g-4">
+        @for (item of courseList; track $index) {
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm border-0 hover-shadow">
+            <img [src]="item.imageUrl" class="card-img-top" alt="Course Image" />
+            <div class="card-body">
+              <h5 class="card-title">{{ item.title }}</h5>
+              <p class="card-text text-muted small" [title]="item.description">
+                {{ item.description | slice : 0 : 100 }}...
+              </p>
+              <div class="d-flex justify-content-between mt-3">
+                <button class="btn text-white" style="background-color: #6366F1;" (click)="openVideoModal(item.id)">
+                  View Video
+                </button>
+                <button class="btn text-dark" style="background-color: #F59E0B;" (click)="enrollInCourse(item.id)">
+                  Enroll
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+
+    <!-- Sidebar: Trending Courses -->
+    <div class="col-lg-3 mt-5 mt-lg-0">
+      <div class="bg-light p-3 rounded shadow-sm">
+        <h4 class="text-center text-dark mb-4">🔥 Trending Courses</h4>
+        <div class="d-grid gap-3">
+          <div class="card border-0 shadow-sm">
+            <img src="#" class="card-img-top" alt="Trending Course" />
+            <div class="card-body p-2">
+              <h6 class="card-title mb-1">Course Title</h6>
+              <p class="text-muted small mb-2">Short course description.</p>
+              <button class="btn btn-dark btn-sm w-100">Explore</button>
+            </div>
+          </div>
+          <!-- Repeat for other trending courses -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Video Modal -->
+<div class="modal fade" id="courseModal" tabindex="-1" aria-labelledby="courseModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Course Videos</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="closeVideoModal()"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row g-4">
+          @for (item of selectedCourse; track $index) {
+          <div class="card h-100 shadow-sm border-0" style="background-color: white; color: #111827;">
+            <div class="card border-0 shadow-sm">
+              <img [src]="item.imageUrl" class="card-img-top" alt="Course Image" />
+              <div class="card-body">
+                <h6 class="card-title">{{ item.videoTitle }}</h6>
+              </div>
             </div>
           </div>
           }

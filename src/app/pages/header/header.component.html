@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">CourseWebsite</a>
     <button
@@ -47,7 +47,7 @@
   </div>
 </nav>
 
-<!-- Modal -->
+
 <div
   class="modal fade"
   id="exampleModal"
@@ -204,6 +204,124 @@
           </form>
         </section>
 
+        }
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg- shadow-sm py-3">
+  <div class="container-fluid">
+    <a class="navbar-brand  fw-bold fs-4" href="#">📚 CourseWebsite</a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav align-items-center gap-3">
+        @if (loginUser) {
+        <li class="nav-item text-white small">Welcome back, <strong>{{ loginUser.emailId }}</strong></li>
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['/my-courses']">My Courses</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-info text-dark btn-sm" (click)="onLogout()">Logout</a>
+        </li>
+        } @else {
+        <li class="nav-item">
+          <a class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</a>
+        </li>
+        }
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content shadow-lg">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title" id="exampleModalLabel">
+          {{ isLoginFormVisiable ? 'Login to your Account' : 'Register for a Course' }}
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <!-- Toggle Tabs -->
+        <div class="d-flex justify-content-center mb-4">
+          <button
+            id="Register"
+            class="btn me-2"
+            [class]="'btn ' + (isLoginFormVisiable ? 'btn-outline-secondary' : 'btn-success')"
+            (click)="toggleForm(false)"
+          >
+            Register
+          </button>
+          <button
+            id="Login"
+            class="btn"
+            [class]="'btn ' + (!isLoginFormVisiable ? 'btn-outline-secondary' : 'btn-success')"
+            (click)="toggleForm(true)"
+          >
+            Login
+          </button>
+        </div>
+
+        <!-- Login Form -->
+        @if (isLoginFormVisiable) {
+        <div>
+          <div class="mb-3">
+            <label for="mail" class="form-label">Email</label>
+            <input type="email" class="form-control" id="mail" [(ngModel)]="userLoginObj.emailId" />
+          </div>
+          <div class="mb-3">
+            <label for="pass" class="form-label">Password</label>
+            <input type="password" class="form-control" id="pass" [(ngModel)]="userLoginObj.password" />
+          </div>
+          <div class="d-flex justify-content-end">
+            <button class="btn btn-secondary me-2" data-bs-dismiss="modal">Close</button>
+            <button class="btn btn-primary" (click)="onLogin()">Login</button>
+          </div>
+        </div>
+        }
+
+        @else {
+        <form>
+          <div class="mb-3">
+            <label for="fullName" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="fullName" [(ngModel)]="userRegisterObj.fullName" name="fullName" />
+          </div>
+          <div class="mb-3">
+            <label for="mail" class="form-label">Email</label>
+            <input type="email" class="form-control" id="mail" [(ngModel)]="userRegisterObj.emailId" name="email" />
+          </div>
+          <div class="mb-3">
+            <label for="userName" class="form-label">User Name</label>
+            <input type="text" class="form-control" id="userName" [(ngModel)]="userRegisterObj.userName" name="userName" />
+          </div>
+          <div class="mb-3">
+            <label for="pass" class="form-label">Password</label>
+            <input type="password" class="form-control" id="pass" [(ngModel)]="userRegisterObj.password" name="password" />
+          </div>
+          <div class="d-flex justify-content-end">
+            <button class="btn btn-secondary me-2" data-bs-dismiss="modal">Close</button>
+            <button class="btn btn-primary" (click)="onRegister()">Register Now</button>
+          </div>
+        </form>
         }
       </div>
     </div>

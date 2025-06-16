@@ -1,0 +1,38 @@
+import { Injectable } from '@angular/core';
+import { GoogleGenerativeAI, ChatSession  } from '@google/generative-ai';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class AiServService {
+  private generativeAI: GoogleGenerativeAI;
+  private chat: ChatSession | null = null;
+
+  constructor() { 
+    this.generativeAI = new GoogleGenerativeAI(
+      'AIzaSyAY6dZ_dK87ibo5-cZ_vIB9vAx5lkE7F5U'
+    );
+  }
+
+  async initChat() {
+    if (!this.chat) {
+      const model = this.generativeAI.getGenerativeModel({ model: 'models/gemini-1.5-flash' });
+      this.chat = model.startChat();
+    }
+  }
+  
+  async generateText(prompt: string): Promise<string> {
+    await this.initChat();
+    const result = await this.chat!.sendMessage(prompt);
+    const response = await result.response;
+    const text = response.text();
+    return text;
+  }
+  
+  resetChat() {
+  this.chat = null;
+  }
+
+}
+
+

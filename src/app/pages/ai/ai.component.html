@@ -1,0 +1,40 @@
+<!-- <div class="chat-container">
+    <h2>Ask me</h2>
+
+    <textarea [(ngModel)]="prompt" placeholder="Type your prompt..." rows="4" class="prompt-input"></textarea>
+
+    <button (click)="sendPrompt()" [disabled]="loading">
+        {{ loading ? 'Thinking...' : 'Send' }}
+    </button>
+    <button (click)="clear()">Clear</button>
+
+    <div *ngIf="response" class="response-box">
+        <h3>Response:</h3>
+        <p>{{ response }}</p>
+    </div>
+</div> -->
+
+<!-- Add this to your Angular component template -->
+<div class="chatbot-wrapper d-flex justify-content-center align-items-center vh-100 bg-light">
+  <div class="chat-container card shadow-lg p-4 w-100" style="max-width: 600px;">
+    <h2 class="text-center mb-4">Ask Me Anything</h2>
+
+    <textarea [(ngModel)]="prompt" 
+              placeholder="Type your prompt..." 
+              rows="4" 
+              class="form-control mb-3"
+              style="resize: none;"></textarea>
+
+    <div class="d-flex justify-content-between">
+      <button class="btn btn-primary" (click)="sendPrompt()" [disabled]="loading">
+        {{ loading ? 'Thinking...' : 'Send' }}
+      </button>
+      <button class="btn btn-outline-secondary" (click)="clear()">Clear</button>
+    </div>
+
+    <div *ngIf="response" class="response-box mt-4 p-3 bg-light border rounded">
+      <h5 class="text-primary">Response:</h5>
+      <p class="mb-0">{{ response }}</p>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-.modal-body  .input-style{
+/* .modal-body  .input-style{
     height: 40px;
     border:  1px solid black;
     border-radius: 10px;
@@ -6,5 +6,21 @@
 }
 .modal-body  .input-style:focus{
     box-shadow: 0 0 0 0.25rem #0d6efd40;
+} */
+
+
+.btn-success {
+  background-color: #4F46E5;
+  border-color: #4F46E5;
+}
+
+.btn-success:hover {
+  background-color: #4338CA;
+  border-color: #4338CA;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #E5E7EB;
+  color: #000;
 }
 
